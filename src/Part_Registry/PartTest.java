@@ -1,4 +1,4 @@
-package Class_Project;
+package Part_Registry;
 
 /**
  * PartTest - A series of tests for the Part object

@@ -1,4 +1,4 @@
-package Class_Project;
+package Part_Registry;
 
 import java.util.ArrayList;
 

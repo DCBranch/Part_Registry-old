@@ -1,4 +1,4 @@
-package Class_Project;
+package Part_Registry;
 
 /**
  * Part - Describes a part for a maintenance system
