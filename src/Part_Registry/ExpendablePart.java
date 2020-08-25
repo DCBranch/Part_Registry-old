@@ -2,23 +2,48 @@ package Part_Registry;
 
 import java.util.ArrayList;
 
+/**
+ * ExpendablePart - A Part object that is reusable, generally used until failure,
+ * and has a notable lead time on replacements coming in
+ * 
+ * @author Dawson C. Branch
+ * @version 0.0.0
+ * @since 0.0.0
+ */
 public class ExpendablePart extends Part
 {
 	private int failureRate = 0; //average number of failures per operational hour of the part
 	private int leadTime = 0; //number of days it takes to replace the part in the supply system
 	ArrayList<ConsumablePart> toolsRequired = new ArrayList<ConsumablePart>();
         
+        /**
+         * ExpendablePart - Default constructor.
+         */
         public ExpendablePart ()
         {
             super();
         }
         
+        /**
+         * ExpendablePart - Constructs an Expendable Part.
+         * 
+         * @param failureRate - int for average number of failures per 
+         * operational hour of the part
+         */
         public ExpendablePart (int failureRate)
         {
             super();
             this.failureRate = failureRate;
         }
         
+        /**
+         * ExpendablePart - Constructs an Expendable Part.
+         * 
+         * @param failureRate - int for average number of failures per 
+         * operational hour of the part
+         * @param leadTime - number of days it takes to replace the part in the 
+         * supply system
+         */
 	public ExpendablePart (int failureRate, int leadTime)
         {
             super();
@@ -26,6 +51,15 @@ public class ExpendablePart extends Part
             this.leadTime = leadTime;
         }
         
+        /**
+         * ExpendablePart - Constructs an Expendable Part.
+         * 
+         * @param name - The description of the Part
+         * @param failureRate - int for average number of failures per 
+         * operational hour of the part
+         * @param leadTime - number of days it takes to replace the part in the 
+         * supply system
+         */
         public ExpendablePart (String name,int failureRate, int leadTime)
         {
             super(name);
@@ -33,6 +67,16 @@ public class ExpendablePart extends Part
             this.leadTime = leadTime;
         }
         
+        /**
+         * ExpendablePart - Constructs an Expendable Part.
+         * 
+         * @param name - The description of the Part
+         * @param number - The Part number
+         * @param failureRate - int for average number of failures per 
+         * operational hour of the part
+         * @param leadTime - number of days it takes to replace the part in the 
+         * supply system
+         */
         public ExpendablePart (String name,String number, int failureRate, int leadTime)
         {
             super(name,number);
@@ -40,6 +84,17 @@ public class ExpendablePart extends Part
             this.leadTime = leadTime;
         }
         
+        /**
+         * ExpendablePart - Constructs an Expendable Part.
+         * 
+         * @param name - The description of the Part
+         * @param number - The Part number
+         * @param ncage - NCAGE code ( 5 characters )
+         * @param failureRate - int for average number of failures per 
+         * operational hour of the part
+         * @param leadTime - number of days it takes to replace the part in the 
+         * supply system
+         */
         public ExpendablePart (String name,String number, String ncage, int failureRate, int leadTime)
         {
             super(name,number,ncage);
@@ -47,6 +102,18 @@ public class ExpendablePart extends Part
             this.leadTime = leadTime;
         }
         
+        /**
+         * ExpendablePart - Constructs an Expendable Part.
+         * 
+         * @param name - The description of the Part
+         * @param number - The Part number
+         * @param ncage - NCAGE code ( 5 characters )
+         * @param niin - ID ( 9 characters )
+         * @param failureRate - int for average number of failures per 
+         * operational hour of the part
+         * @param leadTime - number of days it takes to replace the part in the 
+         * supply system
+         */
         public ExpendablePart (String name,String number, String ncage, String niin, int failureRate, int leadTime)
         {
             super(name,number,ncage,niin);
@@ -54,34 +121,59 @@ public class ExpendablePart extends Part
             this.leadTime = leadTime;
         }
         
+        /**
+         * ExpendablePart - Constructs an Expendable Part.
+         * 
+         * @param name - The description of the Part
+         */
         public ExpendablePart (String name)
         {
             super(name);
         }
         
+        /**
+         * ExpendablePart - Constructs an Expendable Part.
+         * 
+         * @param name - The description of the Part
+         * @param number - The Part number
+         */
         public ExpendablePart (String name,String number)
         {
             super(name,number);
         }
         
+        /**
+         * ExpendablePart - Constructs an Expendable Part.
+         * 
+         * @param name - The description of the Part
+         * @param number - The Part number
+         * @param ncage - NCAGE code ( 5 characters )
+         */
         public ExpendablePart (String name,String number, String ncage)
         {
             super(name,number,ncage);
         }
         
+        /**
+         * ExpendablePart - Constructs an Expendable Part.
+         * 
+         * @param name - The description of the Part
+         * @param number - The Part number
+         * @param ncage - NCAGE code ( 5 characters )
+         * @param niin - ID ( 9 characters )
+         */
         public ExpendablePart (String name,String number, String ncage, String niin)
         {
             super(name,number,ncage,niin);
         }
         
-	public void fail(Part failedPart)
-   {
-	for(int i = 0; i <= toolsRequired.size()-1; i++)
-        {
-            toolsRequired.get(i).fail(toolsRequired.get(i));
-        }
-       System.err.println("There goes another one... \n \n" + failedPart + "\n" + "Expedable \n" + "Replacement time: " + leadTime);
-   }
+        /**
+         * addTool - Adds a tool, a consumable part, to the list of tools 
+         * required
+         * 
+         * @param tool - Consumable part to be added to the list of required 
+         * tools
+         */
         public void addTool(ConsumablePart tool)
         {
             toolsRequired.add(tool);

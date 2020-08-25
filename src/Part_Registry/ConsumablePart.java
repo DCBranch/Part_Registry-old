@@ -1,16 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Part_Registry;
 
+/**
+ * ConsumablePart - A Part object that is only usable a certain number of times
+ * 
+ * @author Dawson C. Branch
+ * @version 0.0.0
+ * @since 0.0.0
+ */
 public class ConsumablePart extends Part
 {
 	private double replacementCost = 0; //the cost to replace this item when it's used up
 	private int usesLeft = 1; //number of times the ConsumablePart can be used before it must be replaced
 	private int usesCap;
         
+        /**
+         * ConsumablePart - Default constructor for an Consumable Part.
+         */
 	public ConsumablePart ()
         {
         super();
@@ -18,6 +23,11 @@ public class ConsumablePart extends Part
         this.usesLeft = this.usesCap;
         }
         
+        /**
+         * ConsumablePart - Constructs an Consumable Part.
+         * 
+         * @param USES - Max number of uses left for the part
+         */
         public ConsumablePart (int USES)
         {
         super();
@@ -25,6 +35,12 @@ public class ConsumablePart extends Part
         this.usesLeft = this.usesCap;
         }
         
+        /**
+         * ConsumablePart - Constructs an Consumable Part.
+         * 
+         * @param USES - Max number of uses left for the part
+         * @param replacementCost - How much it'll cost to replace the part
+         */
         public ConsumablePart (int USES,double replacementCost)
         {
         super();
@@ -33,6 +49,13 @@ public class ConsumablePart extends Part
         this.usesLeft = this.usesCap;
         }
         
+        /**
+         * ConsumablePart - Constructs an Consumable Part.
+         * 
+         * @param name - The description of the Part
+         * @param USES - Max number of uses left for the part
+         * @param replacementCost - How much it'll cost to replace the part
+         */
         public ConsumablePart (String name,int USES,double replacementCost)
         {
         super(name);
@@ -41,6 +64,14 @@ public class ConsumablePart extends Part
         this.usesLeft = this.usesCap;
         }
         
+        /**
+         * ConsumablePart - Constructs an Consumable Part.
+         * 
+         * @param name - The description of the Part
+         * @param number - The Part number
+         * @param USES - Max number of uses left for the part
+         * @param replacementCost - How much it'll cost to replace the part
+         */
         public ConsumablePart (String name,String number,int USES,double replacementCost)
         {
         super(name,number);
@@ -49,6 +80,15 @@ public class ConsumablePart extends Part
         this.usesLeft = this.usesCap;
         }
         
+        /**
+         * ConsumablePart - Constructs an Consumable Part.
+         * 
+         * @param name - The description of the Part
+         * @param number - The Part number
+         * @param ncage - NCAGE code ( 5 characters )
+         * @param USES - Max number of uses left for the part
+         * @param replacementCost - How much it'll cost to replace the part
+         */
         public ConsumablePart (String name,String number,String ncage,int USES,double replacementCost)
         {
         super(name,number,ncage);
@@ -57,6 +97,16 @@ public class ConsumablePart extends Part
         this.usesLeft = this.usesCap;
         }
         
+        /**
+         * ConsumablePart - Constructs an Consumable Part.
+         * 
+         * @param name - The description of the Part
+         * @param number - The Part number
+         * @param ncage - NCAGE code ( 5 characters )
+         * @param niin - ID ( 9 characters )
+         * @param USES - Max number of uses left for the part
+         * @param replacementCost - How much it'll cost to replace the part
+         */
         public ConsumablePart (String name,String number,String ncage,String niin,int USES,double replacementCost)
         {
         super(name,number,ncage,niin);
@@ -65,6 +115,11 @@ public class ConsumablePart extends Part
         this.usesLeft = this.usesCap;
         }
         
+        /**
+         * ConsumablePart - Constructs an Consumable Part.
+         * 
+         * @param name - The description of the Part
+         */
         public ConsumablePart (String name)
         {
         super(name);
@@ -72,6 +127,12 @@ public class ConsumablePart extends Part
         this.usesLeft = this.usesCap;
         }
         
+        /**
+         * ConsumablePart - Constructs an Consumable Part.
+         * 
+         * @param name - The description of the Part
+         * @param number - The Part number
+         */
         public ConsumablePart (String name,String number)
         {
         super(name,number);
@@ -79,6 +140,13 @@ public class ConsumablePart extends Part
         this.usesLeft = this.usesCap;
         }
         
+        /**
+         * ConsumablePart - Constructs an Consumable Part.
+         * 
+         * @param name - The description of the Part
+         * @param number - The Part number
+         * @param ncage - NCAGE code ( 5 characters )
+         */
         public ConsumablePart (String name,String number,String ncage)
         {
         super(name,number,ncage);
@@ -86,6 +154,14 @@ public class ConsumablePart extends Part
         this.usesLeft = this.usesCap;
         }
         
+        /**
+         * ConsumablePart - Constructs an Consumable Part.
+         * 
+         * @param name - The description of the Part
+         * @param number - The Part number
+         * @param ncage - NCAGE code ( 5 characters )
+         * @param niin - ID ( 9 characters )
+         */
         public ConsumablePart (String name,String number,String ncage,String niin)
         {
         super(name,number,ncage,niin);

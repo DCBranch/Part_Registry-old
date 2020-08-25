@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="481.0" prefWidth="502.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Part_Registry.MainWindowController">
+   <children>
+      <TabPane prefHeight="481.0" prefWidth="502.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="tab_View" text="View">
+               <content>
+                  <Pane fx:id="pne_View" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <VBox alignment="TOP_RIGHT" layoutX="36.0" layoutY="58.0" prefHeight="124.0" prefWidth="432.0">
+                           <children>
+                              <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                                 <children>
+                                    <Label fx:id="lbl_View_Name" text="Name:">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="txt_View_Name">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </TextField>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="3.0" left="10.0" right="10.0" top="3.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                                 <children>
+                                    <Label fx:id="lbl_View_Number" text="Number:">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="txt_View_Number">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </TextField>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="3.0" left="10.0" right="10.0" top="3.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                                 <children>
+                                    <Label fx:id="lbl_View_Ncage" text="NCAGE Code:">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="txt_View_Ncage">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </TextField>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="3.0" left="10.0" right="10.0" top="3.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                                 <children>
+                                    <Label fx:id="lbl_View_Id" text="ID:">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="txt_View_Id">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </TextField>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="3.0" left="10.0" right="10.0" top="3.0" />
+                                 </padding>
+                              </HBox>
+                              <Button fx:id="btn_View_Search" mnemonicParsing="false" text="Search" />
+                           </children>
+                        </VBox>
+                        <HBox alignment="CENTER" layoutX="298.0" layoutY="385.0" prefHeight="45.0" prefWidth="189.0">
+                           <children>
+                              <Button fx:id="btn_View_Enter" mnemonicParsing="false" text="Enter">
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="btn_View_Delete" layoutX="33.0" layoutY="20.0" mnemonicParsing="false" text="Delete" />
+                              <Button fx:id="btn_View_Cancel" mnemonicParsing="false" text="Cancel">
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="44.0" prefWidth="476.0">
+                           <children>
+                              <ComboBox fx:id="cmb_View_PartType" prefWidth="150.0" promptText="Part Type" />
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                        <AnchorPane layoutX="5.0" layoutY="215.0" prefHeight="171.0" prefWidth="491.0">
+                           <children>
+                              <ListView fx:id="ltv_View_Results" layoutX="-66.0" layoutY="-2.0" prefHeight="171.0" prefWidth="491.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </Pane>
+               </content></Tab>
+          <Tab fx:id="tab_NewEntry" closable="false" text="New Entry">
+               <content>
+                  <Pane fx:id="pne_NewEntry" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutX="83.0" layoutY="87.0" prefHeight="279.0" prefWidth="337.0">
+                           <children>
+                              <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                                 <children>
+                                    <Label fx:id="lbl_NewEntry_Name" text="Name:">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font></Label>
+                                    <TextField fx:id="txt_NewEntry_Name">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </TextField>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="3.0" left="10.0" right="10.0" top="3.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                                 <children>
+                                    <Label fx:id="lbl_NewEntry_Number" text="Number:">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font></Label>
+                                    <TextField fx:id="txt_NewEntry_Number">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </TextField>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="3.0" left="10.0" right="10.0" top="3.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                                 <children>
+                                    <Label fx:id="lbl_NewEntry_Ncage" text="NCAGE Code:">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font></Label>
+                                    <TextField fx:id="txt_NewEntry_Ncage">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </TextField>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="3.0" left="10.0" right="10.0" top="3.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                                 <children>
+                                    <Label fx:id="lbl_NewEntry_Id" text="ID:">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font></Label>
+                                    <TextField fx:id="txt_NewEntry_Id">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </TextField>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="3.0" left="10.0" right="10.0" top="3.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                                 <children>
+                                    <Label fx:id="lbl_NewEntry_FailureRate" text="Failure Rate:">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font></Label>
+                                    <TextField fx:id="txt_NewEntry_FailureRate">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </TextField>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="3.0" left="10.0" right="10.0" top="3.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                                 <children>
+                                    <Label fx:id="lbl_NewEntry_LeadTime" text="Lead Time:">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font></Label>
+                                    <TextField fx:id="txt_NewEntry_LeadTime">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </TextField>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="3.0" left="10.0" right="10.0" top="3.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                                 <children>
+                                    <Label fx:id="lbl_NewEntry_ToolsRequired" text="Tools Required:">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font></Label>
+                                    <TextField fx:id="txt_NewEntry_ToolsRequired">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </TextField>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="3.0" left="10.0" right="10.0" top="3.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                                 <children>
+                                    <Label fx:id="lbl_NewEntry_ReplacementCost" text="Replacement Cost:">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font></Label>
+                                    <TextField fx:id="txt_NewEntry_Replacement">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </TextField>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="3.0" left="10.0" right="10.0" top="3.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                                 <children>
+                                    <Label fx:id="lbl_NewEntry_UsesLeft" text="Uses Left:">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font></Label>
+                                    <TextField fx:id="txt_NewEntry_UsesLeft">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </TextField>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="3.0" left="10.0" right="10.0" top="3.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <HBox alignment="CENTER" layoutX="336.0" layoutY="385.0" prefHeight="44.0" prefWidth="151.0">
+                           <children>
+                              <Button fx:id="btn_NewEntry_Enter" mnemonicParsing="false" text="Enter">
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="btn_NewEntry_Cancel" mnemonicParsing="false" text="Cancel">
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="44.0" prefWidth="476.0">
+                           <children>
+                              <RadioButton fx:id="rad_NewEntry_Expendable" mnemonicParsing="false" prefHeight="20.0" prefWidth="141.0" text="Expendable">
+                                 <font>
+                                    <Font name="System Bold Italic" size="14.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="rad_NewEntry_Consumable" mnemonicParsing="false" prefHeight="20.0" prefWidth="141.0" text="Consumable">
+                                 <font>
+                                    <Font name="System Bold Italic" size="14.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

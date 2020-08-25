@@ -2,8 +2,10 @@ package Part_Registry;
 
 /**
  * Part - Describes a part for a maintenance system
+ * 
  * @author Dawson Branch
- * @version 0.4
+ * @version 0.4.0
+ * @since 0.0.0
  */
  public abstract class Part {
    
@@ -38,8 +40,6 @@ package Part_Registry;
       
       return ( result );
    }
-   
-   // ============== CONSTRUCTORS ============== //
    
    /**
     * No-argument constructor calls Full Argument Constructor (FAC) with default values

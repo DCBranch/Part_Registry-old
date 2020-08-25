@@ -1,51 +1,48 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Part_Registry;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.scene.Parent;
+import javafx.fxml.FXMLLoader;
 
 /**
- *
- * @author DCoreB
+ * Part_Registry - Launches the standalone application Part Registry using the 
+ * FXMLLoader to load the Main Window FXML document. Application allows for the 
+ * entry, searching, editing, and deletion of Part items, including expendables 
+ * and consumables. Based upon James Noyes(professor)' PartTest class.
+ * 
+ * @author Dawson C. Branch
+ * @version 1.1.0
+ * @since 1.0.0
  */
+
 public class Part_Registry extends Application {
     
-    @Override
-    public void start(Stage primaryStage) {
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
-        
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
-        
-        Scene scene = new Scene(root, 300, 250);
-        
-        primaryStage.setTitle("Hello World!");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    }
-
     /**
-     * @param args the command line arguments
+     * Start - Entry point for JavaFX applications
+     * 
+     * @param stage - Main stage scene
+     * @throws Exception
      */
-    public static void main(String[] args) {
-        launch(args);
+    @Override
+    public void start(Stage stage) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
+        
+        Scene scene = new Scene(root);
+        
+        stage.setScene(scene);
+        stage.show();
     }
     
+    /**
+     * main - Launches the standalone application Part_Registry. Returns upon 
+     * app's closure.
+     * 
+     * @param args - inputted arguments from command line
+     */
+    public static void main(String [] args)
+    {
+        launch(args);
+    }
 }
