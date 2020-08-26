@@ -1,5 +1,8 @@
 package Part_Registry;
 
+import Parts.ExpendablePart;
+import Parts.ConsumablePart;
+
 /**
  * PartTest - A series of tests for the Part object
  * @author James Noyes  -  james.d.noyes@uscg.mil 

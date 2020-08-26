@@ -13,10 +13,27 @@ import javafx.fxml.FXMLLoader;
  * and consumables. Based upon James Noyes(professor)' PartTest class.
  * 
  * @author Dawson C. Branch
- * @version 1.1.0
+ * @version 1.2.0
  * @since 1.0.0
+ * 
+ * Possible updates:
+ * 
+ * Add a real-time iteration aspect of the program to simulate a
+ * system using and replacing part. One possible method of doing this is having 
+ * the program iterate in real-time and, during each iteration, each consumable 
+ * part gets their number of uses decremented and expendable parts are randomly 
+ * determined to pass the iteration or fail during the iteration, resulting in a
+ * part failure. The replacements, if any, could be handled automatically with 
+ * a message left behind for the part or via a another pop-up interface giving 
+ * users the option to decommission the part and continue or put in a order for a 
+ * replacement, note the cost, and continue running.
+ * 
+ * Add start dates and times for all parts
+ * 
+ * Add failure dates and times for all expendable parts
+ * 
+ * 
  */
-
 public class Part_Registry extends Application {
     
     /**

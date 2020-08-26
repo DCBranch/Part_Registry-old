@@ -1,4 +1,4 @@
-package Part_Registry;
+package Part_Registry.FXMLDocumentControllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;

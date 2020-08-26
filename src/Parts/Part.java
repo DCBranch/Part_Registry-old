@@ -1,10 +1,10 @@
-package Part_Registry;
+package Parts;
 
 /**
  * Part - Describes a part for a maintenance system
  * 
  * @author Dawson Branch
- * @version 0.4.0
+ * @version 1.2.0
  * @since 0.0.0
  */
  public abstract class Part {
@@ -13,6 +13,7 @@ package Part_Registry;
    private String number;  // The Part number
    private String ncage;   // NCAGE ( 5 characters )
    private String niin;    // ID ( 9 characters )
+   private UnusableException stopper = null; //The reason the part is no longer usable
    
    
    // ========= Object Class Overrides ========= //
@@ -146,6 +147,16 @@ package Part_Registry;
    }
    
    /**
+    * setStopper - decommissions this part's future usage
+    * 
+    * @param reason - cause for the unusable exception's creation and its future
+    * throws
+    */
+   public void setStopper (String reason){
+       this.stopper = new UnusableException(reason);
+   }
+   
+   /**
     * Returns the String name of the part
     * @return the name of the part
     */
@@ -177,5 +188,12 @@ package Part_Registry;
       return this.niin;
    }
    
-   
+   /**
+    * getStopper - supplies the reason for this part's decommissioning
+    * 
+    * @return cause for the unusable exception's creation and its future throws
+    */
+   public UnusableException getStopper(){
+       return this.stopper;
+   }
 } // end Class Part
