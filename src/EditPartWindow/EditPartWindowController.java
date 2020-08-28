@@ -1,4 +1,4 @@
-package Part_Registry.FXMLDocumentControllers;
+package EditPartWindow;
 
 import java.net.URL;
 import java.util.ResourceBundle;

@@ -1,10 +1,16 @@
-package Part_Registry;
+package Main;
+
+//import FXMLDocuments.MainWindow;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.control.ToggleGroup;
+import java.io.File;
+import java.nio.file.Paths;
 
 /**
  * Part_Registry - Launches the standalone application Part Registry using the 
@@ -13,7 +19,7 @@ import javafx.fxml.FXMLLoader;
  * and consumables. Based upon James Noyes(professor)' PartTest class.
  * 
  * @author Dawson C. Branch
- * @version 1.2.0
+ * @version 1.3.0
  * @since 1.0.0
  * 
  * Possible updates:
@@ -35,6 +41,7 @@ import javafx.fxml.FXMLLoader;
  * 
  */
 public class Part_Registry extends Application {
+    File partListing = new File("PartListing.txt");
     
     /**
      * Start - Entry point for JavaFX applications
@@ -48,8 +55,11 @@ public class Part_Registry extends Application {
         
         Scene scene = new Scene(root);
         
+        //ToggleGroup partTypeGroup = new ToggleGroup();
+        
         stage.setScene(scene);
         stage.show();
+        
     }
     
     /**
@@ -61,5 +71,27 @@ public class Part_Registry extends Application {
     public static void main(String [] args)
     {
         launch(args);
+    }
+    
+    /**
+     * turnOffGUI - Disables and turns off the visibility of select part of a 
+     * GUI, a control
+     * 
+     * @param gui_Name - Control, piece of GUI, to be turned off
+     */
+    public static void turnOffNode(Node gui_Name) {
+        gui_Name.setDisable(true);
+        gui_Name.setVisible(false);
+    }
+    
+    /**
+     * turnOffGUI - Enables and turns on the visibility of select part of a GUI, 
+     * a control
+     * 
+     * @param gui_Name - Control, piece of GUI, to be turned on
+     */
+    public static void turnOnNode(Node gui_Name) {
+        gui_Name.setDisable(false);
+        gui_Name.setVisible(true);
     }
 }
