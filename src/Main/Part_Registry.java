@@ -11,6 +11,11 @@ import javafx.scene.Node;
 import javafx.scene.control.ToggleGroup;
 import java.io.File;
 import java.nio.file.Paths;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
 
 /**
  * Part_Registry - Launches the standalone application Part Registry using the 
@@ -19,7 +24,7 @@ import java.nio.file.Paths;
  * and consumables. Based upon James Noyes(professor)' PartTest class.
  * 
  * @author Dawson C. Branch
- * @version 1.3.0
+ * @version 1.4.0
  * @since 1.0.0
  * 
  * Possible updates:
@@ -41,7 +46,6 @@ import java.nio.file.Paths;
  * 
  */
 public class Part_Registry extends Application {
-    File partListing = new File("PartListing.txt");
     
     /**
      * Start - Entry point for JavaFX applications

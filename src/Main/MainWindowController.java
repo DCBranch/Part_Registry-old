@@ -1,11 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Main;
 
 import Main.Part_Registry;
+import Parts.Part;
+import Parts.ConsumablePart;
+import Parts.ExpendablePart;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -26,16 +24,26 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.Toggle;
 import javafx.scene.Node;
 import javafx.scene.layout.HBox;
+import java.io.BufferedOutputStream;
+import java.io.BufferedWriter;
+import java.io.File;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
+import java.util.stream.Stream;
 
 /**
  * FXML Controller class for main window
  *
  * @author Dawson C. Branch
- * @version 1.3.0
+ * @version 1.4.0
  * @since 1.2.0
  */
 public class MainWindowController implements Initializable {
 
+    File listing = new File("Part_Listing");
+    
     @FXML
     private Pane pne_NewEntry;
     @FXML
@@ -116,9 +124,12 @@ public class MainWindowController implements Initializable {
         ToggleGroup partTypeGroup = new ToggleGroup();
         rad_NewEntry_Consumable.setToggleGroup(partTypeGroup);
         rad_NewEntry_Expendable.setToggleGroup(partTypeGroup);
-        System.out.println("init test");
+        entryTab_ConsumableDeselected();
+        entryTab_ExpendableDeselected();
         
-        partTypeGroup.selectedToggleProperty().addListener((observable, t, t1) -> entryTab_TypeToggle());  
+        partTypeGroup.selectedToggleProperty().addListener((observable, t, t1) -> entryTab_TypeToggle());
+        
+        System.out.println("Initialization complete.");
     }    
     
       @FXML
@@ -131,10 +142,37 @@ public class MainWindowController implements Initializable {
 
     }
 
-    
+    /**
+     * enterPart - Appends the data input into the text boxes and uses it to 
+     * make another part entry into the part listing file.
+     * 
+     * @param event - Enter button on Entry tab is clicked
+     * @throws IOException 
+     */
     @FXML
-    void enterPart(ActionEvent event) {
+    void enterPart(ActionEvent event) throws IOException
+    {
+        BufferedWriter listingWriter = new BufferedWriter( new FileWriter("PartListing.txt", true));
         
+        listingWriter.append("\n" + txt_NewEntry_Name.getText() +
+                "|" + txt_NewEntry_Number.getText() +
+                "|" + txt_NewEntry_Ncage.getText() +
+                "|" + txt_NewEntry_Id.getText());
+        
+        if(rad_NewEntry_Consumable.isSelected())
+        {
+            listingWriter.append("|" + txt_NewEntry_ReplacementCost.getText() +
+                    "|" + txt_NewEntry_UsesLeft.getText());
+        }
+        if(rad_NewEntry_Expendable.isSelected()){
+            listingWriter.append("testing expendable.\n"+txt_NewEntry_Name.getText());
+            listingWriter.append("|" + txt_NewEntry_FailureRate.getText() +
+                "|" + txt_NewEntry_LeadTime.getText() +
+                "|" + txt_NewEntry_ToolsRequired.getText());
+        }
+        
+        listingWriter.flush();
+        System.out.println("Entry complete.");
     }
 
     @FXML
