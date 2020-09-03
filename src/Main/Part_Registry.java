@@ -1,48 +1,47 @@
 package Main;
 
-//import FXMLDocuments.MainWindow;
-
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.control.ToggleGroup;
-import java.io.File;
-import java.nio.file.Paths;
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
 
 /**
  * Part_Registry - Launches the standalone application Part Registry using the 
  * FXMLLoader to load the Main Window FXML document. Application allows for the 
- * entry, searching, editing, and deletion of Part items, including expendables 
+ * entry, searching, and deletion of Part items, including expendables 
  * and consumables. Based upon James Noyes(professor)' PartTest class.
  * 
  * @author Dawson C. Branch
- * @version 1.4.0
+ * @version 2.0.0
  * @since 1.0.0
  * 
  * Possible updates:
  * 
- * Add a real-time iteration aspect of the program to simulate a
- * system using and replacing part. One possible method of doing this is having 
- * the program iterate in real-time and, during each iteration, each consumable 
- * part gets their number of uses decremented and expendable parts are randomly 
- * determined to pass the iteration or fail during the iteration, resulting in a
- * part failure. The replacements, if any, could be handled automatically with 
- * a message left behind for the part or via a another pop-up interface giving 
- * users the option to decommission the part and continue or put in a order for a 
- * replacement, note the cost, and continue running.
+ *  Part Editing (IN-PROGRESS)
  * 
- * Add start dates and times for all parts
+ *  Add a real-time iteration aspect of the program to simulate a
+ *  system using and replacing part. One possible method of doing this is having 
+ *  the program iterate in real-time and, during each iteration, each consumable 
+ *  part gets their number of uses decremented and expendable parts are randomly 
+ *  determined to pass the iteration or fail during the iteration, resulting in a
+ *  part failure. The replacements, if any, could be handled automatically with 
+ *  a message left behind for the part or via a another pop-up interface giving 
+ *  users the option to decommission the part and continue or put in a order for a 
+ *  replacement, note the cost, and continue running.
  * 
- * Add failure dates and times for all expendable parts
+ *  Add start dates and times for all parts
  * 
+ *  Add failure dates and times for all expendable parts
+ * 
+ *  Consolidate methods by extracting broadly applicable methods or processes 
+ *  placing them in the main class
+ *   exit(ActionEvent event)
+ * 
+ *  Update toString() methods in parts
+ *   Possibly usable in part editing as a method of storing and converting data 
+ *   in a consistent manner
  * 
  */
 public class Part_Registry extends Application {
@@ -56,12 +55,9 @@ public class Part_Registry extends Application {
     @Override
     public void start(Stage stage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
-        
         Scene scene = new Scene(root);
-        
-        //ToggleGroup partTypeGroup = new ToggleGroup();
-        
         stage.setScene(scene);
+        stage.setTitle("Part Registry");
         stage.show();
         
     }

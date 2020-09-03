@@ -4,7 +4,7 @@ package Parts;
  * Part - Describes a part for a maintenance system
  * 
  * @author Dawson Branch
- * @version 1.2.0
+ * @version 2.0.0
  * @since 0.0.0
  */
  public abstract class Part {
@@ -20,7 +20,7 @@ package Parts;
    
    @Override
    public String toString() {
-      return ( this.name + ", P/N: " + this.number + ", CAGE: " + this.ncage + ", NIIN: " + this.niin );
+      return ( this.name + "| P/N: " + this.number + "| CAGE: " + this.ncage + "| NIIN: " + this.niin );
    }
    
    @Override
@@ -74,7 +74,7 @@ package Parts;
     * Three argument constructor calls FAC with Part number, ncage, niin and defaults
     * @param number an alphanumeric string for the Part number
     * @param ncage A five-character string for the CAGE code
-    * @param niin A 13-character string for the NIIN of the form XXXX-XX-XXX-XXXX
+    * @param niin A 13-number string for the NIIN of the form XXXX-XX-XXX-XXXX
     */
    public Part( String name, String number, String ncage, String niin )  throws IllegalArgumentException {
       this.name = name;
@@ -93,14 +93,70 @@ package Parts;
    }
    
    /**
-    * This is the Full Argument Constructor (FAC).  All other constructors call this.
-    * @param name an alphanumeric string for the Part name
-    * @param number an alphanumeric string for the Part number
-    * @param ncage A five-character string for the CAGE code
-    * @param niin A 13-character string for the NIIN of the form XXXX-XX-XXX-XXXX
+    * intCheck - Checks to see if a string is numeric (an integer)
+    * 
+    * @param s - String to be tested if it's a number
+    * @return - True if string is formatted correctly and false otherwise
     */
+    public static boolean intCheck(String s)
+    {
+        try{
+            int i = Integer.parseInt(s);
+            return true;
+        } catch(IllegalArgumentException e)
+        {
+            return false;
+        }
+    }
+
+    /**
+    * doubleCheck - Checks to see if a string is numeric (an double)
+    * 
+    * @param s - String to be tested if it's a number
+    * @return - True if string is formatted correctly and false otherwise
+    */
+    public static boolean doubleCheck(String s)
+    {
+        try{
+            double i = Double.parseDouble(s);
+            return true;
+        } catch(IllegalArgumentException e)
+        {
+            return false;
+        }
+    }
    
-   // ========= ACCESSORS AND MUTATORS ========= //
+   /**
+    * ncageCheck - Checks a potential ncage and returns true or false depending 
+    * on whether it fits the proper ncage format, a five-character string for 
+    * the CAGE code
+    * 
+    * @param ncage - String to be tested for ncage formatting
+    * @return - True if string is formatted correctly and false otherwise
+    */
+   public static boolean ncageCheck(String ncage)
+   {
+       if(ncage.matches("[A-Z0-9]{5}"))
+          return true;
+      else
+          return false;
+   }
+   
+   /**
+    * ncageCheck - Checks a potential ncage and returns true or false depending 
+    * on whether it fits the proper ncage format, a 13-number string for the 
+    * NIIN of the form XXXX-XX-XXX-XXXX
+    * 
+    * @param niin - String to be tested for niin formatting
+    * @return - True if string is formatted correctly and false otherwise
+    */
+   public static boolean niinCheck(String niin)
+   {
+       if(niin.matches("\\d{4}-\\d{2}-\\d{3}-\\d{4}"))
+          return true;
+      else
+          return false;
+   }
    
    /**
     * Takes a string to set the name for the Part
