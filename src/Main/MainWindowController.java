@@ -56,7 +56,7 @@ import javafx.stage.StageStyle;
  * a delete confirmation window.
  *
  * @author Dawson C. Branch
- * @version 2.0.0
+ * @version 2.0.1
  * @since 1.2.0
  * 
  * Possible Updates: 
@@ -307,6 +307,7 @@ public class MainWindowController implements Initializable/*, WindowListener, Ac
         
         delStage.setTitle("Delete Part");
         delStage.setScene(scene);
+        delStage.resizableProperty().setValue(Boolean.FALSE);
         delStage.show();
         
         
@@ -379,6 +380,7 @@ public class MainWindowController implements Initializable/*, WindowListener, Ac
         editStage.initModality(Modality.APPLICATION_MODAL);
         editStage.setTitle("Edit Part");
         editStage.setScene(scene);
+        editStage.resizableProperty().setValue(Boolean.FALSE);
         editStage.show();
         
         endIndex = selectedLine.indexOf("| P/N: ");
@@ -386,42 +388,7 @@ public class MainWindowController implements Initializable/*, WindowListener, Ac
         startIndex = endIndex + "| P/N: ".length() - 1;
         endIndex = selectedLine.indexOf("| CAGE: ");
         editController.setNumber(selectedLine.substring(startIndex, endIndex));
-        
-        //STOPPED HERE (Sept. 3rd, 2020)
-        
-        /*
-        //REMOVE ME
-        listingWriter.append("\n" + txt_NewEntry_Name.getText() +
-                "| P/N: " + txt_NewEntry_Number.getText() +
-                "| CAGE: " + txt_NewEntry_Ncage.getText().toUpperCase() +
-                "| NIIN: " + txt_NewEntry_Id.getText());
-        if(rad_NewEntry_Consumable.isSelected())
-        {
-            listingWriter.append("| COST: " + txt_NewEntry_ReplacementCost.getText() +
-                "| USES LEFT: " + txt_NewEntry_UsesLeft.getText()
-                + " #CONSUMABLE");
-        }
-        if(rad_NewEntry_Expendable.isSelected())
-        {
-            listingWriter.append(" | " + txt_NewEntry_FailureRate.getText() +
-                "| LEAD TIME: " + txt_NewEntry_LeadTime.getText() +
-                "| TOOL LIST: " + txt_NewEntry_ToolsRequired.getText()
-                + " #EXPENDABLE");
-        }
-        //REMOVE ME
-        */
-        /*
-        while(startIndex == -1 || selectedLine.indexOf("|") == -1)
-        {
             
-            currElement = selectedLine.substring(startIndex, selectedLine.indexOf("|", startIndex));
-            startIndex = selectedLine.indexOf("|", startIndex);
-            System.out.println(currElement);
-            currElement.replace("|", "");
-            System.out.println(currElement);
-            splitLine.add(currElement);
-        }*/
-        
         
         EventHandler<MouseEvent> eventHandler = new EventHandler<MouseEvent>(){
             /**
@@ -497,7 +464,7 @@ public class MainWindowController implements Initializable/*, WindowListener, Ac
         ltv_View_Results.getItems().clear();
         try(Stream<String> partStream = Files.lines(Paths.get(listing.getPath())))
         {
-            System.out.println("Test try start");
+            System.out.println("Search start");
             List<String> searchTerms = new ArrayList();
             searchTerms.add(txt_View_Name.getText());
             searchTerms.add(txt_View_Number.getText());
@@ -522,7 +489,7 @@ public class MainWindowController implements Initializable/*, WindowListener, Ac
             }
             
             ltv_View_Results.getItems().addAll(partObsList);
-            System.out.println("Test try end");
+            System.out.println("Search end");
         } catch (IOException e)
         {
             System.err.println("Invalid File.");

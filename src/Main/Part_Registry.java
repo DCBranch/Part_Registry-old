@@ -14,7 +14,7 @@ import javafx.scene.Node;
  * and consumables. Based upon James Noyes(professor)' PartTest class.
  * 
  * @author Dawson C. Branch
- * @version 2.0.0
+ * @version 2.0.1
  * @since 1.0.0
  * 
  * Possible updates:
@@ -58,6 +58,7 @@ public class Part_Registry extends Application {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("Part Registry");
+        stage.resizableProperty().setValue(Boolean.FALSE);
         stage.show();
         
     }
