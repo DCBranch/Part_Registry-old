@@ -56,7 +56,7 @@ import javafx.stage.StageStyle;
  * a delete confirmation window.
  *
  * @author Dawson C. Branch
- * @version 2.0.2
+ * @version 2.0.3
  * @since 1.2.0
  */
 public class MainWindowController implements Initializable/*, WindowListener, ActionListener*/ {
@@ -328,6 +328,7 @@ public class MainWindowController implements Initializable/*, WindowListener, Ac
 
                     List<String> list = (List<String>) partStream
                             .filter(line -> !(line.contentEquals( selectedLine )))
+                            .filter(line -> !(line.isBlank()))
                             .collect(Collectors.toList());
                     
                     for(String line : list) { listWriter.append("\n" + line.trim()); }
