@@ -39,11 +39,11 @@ Used to create the Part Registry:
 ## Possible Updates
 Here is a list of bug fixes, changes, or new additions that may come in the future:
 
+*  Part Editing (IN-PROGRESS)
 * Add general invalid text label to view tab and enable it to give a message for clicking delete without an item selected
 * Use some message(s) or label(s) to confirm to the player that an item has been successfully deleted or created
 * Automatic List view clearing or refreshing upon clicking a different tab or making a change to the list
 * Allow for alphanumeric CAGE inputs
-*  Part Editing (IN-PROGRESS)
 *  Add a real-time iteration aspect of the program to simulate a system using and replacing part. One possible method of doing this is having the program iterate in real-time and, during each iteration, each consumable part gets their number of uses decremented and expendable parts are randomly determined to pass the iteration or fail during the iteration, resulting in a part failure. The replacements, if any, could be handled automatically with a message left behind for the part or via a another pop-up interface giving users the option to decommission the part and continue or put in a order for a replacement, note the cost, and continue running.
 * Add start dates and times for all parts
 * Add failure dates and times for all expendable parts
