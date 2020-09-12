@@ -58,13 +58,6 @@ import javafx.stage.StageStyle;
  * @author Dawson C. Branch
  * @version 2.0.2
  * @since 1.2.0
- * 
- * Possible Updates: 
- * 
- *  Part Editing 
- * 
- *  Have a setter for the delete window's focal part name and have it get 
- *  inserted into its label
  */
 public class MainWindowController implements Initializable/*, WindowListener, ActionListener*/ {
 
