@@ -1,4 +1,4 @@
-# Part_Registry - Manufacturing Part List Editor
+# Part Registry - Manufacturing Part List Editor
 A part list editing program made in Java and utilizing the OpenFX's JavaFX libraries for the GUI. The application showcases a JavaFX/FXML based GUI with tabs and multiple windows, file writing and rewriting, line-by-line sorting, lambda expressions with streams and collection.
 
 ## Table of Contents
@@ -20,14 +20,14 @@ Using a from database-like system made from scratch to showcase, Part Registry u
 However, parts also fall into one of two types and both have their own unique pieces of data:
 
 * Consumable parts: These parts are only usable a finite number of times. Each has spaces for replacement cost and the number of uses left.
-* Expendable parts: These parts are used until failure. Each has spaces for failure rate(avg. number of failure per operational hour), lead time (number of days for a new part), and the tools required to have the expendable part be functional.
+* Expendable parts: These parts are used until failure. Each has spaces for failure rate (avg. number of failure per operational hour), lead time (number of days for a new part), and the tools required to have the expendable part be functional.
 
 ### Design
 The program's capabilities are divided into two tabs on the same window.
 
 Adding a new part is done on the "New Entry" tab of the Part Registry on which the four generic part text fields are shown and the type-unique fields toggle on or off based on the part type radio buttons at the top. Clicking "Enter" uses the info inputted to create a new part listing in the form of 'Name| P/N: ...| CAGE: ...| NIIN: ...| FAIL RATE: ...| LEAD TIME: ...| TOOL LIST: ... #EXPENDABLE' with "Name" replaced with the part's name and the ...'s replaced with valid entries from the other text fields, if any.
 
-Viewing the list is done on the "View" tab. Part type or "All" is selectable via a combo box at the top. Below that, there are text fields for the 4 generic part datums and search button. Clicking the search button causes the program to use any and all user selected or inputted data to be used to filter the part listing and display the list in the list view in the bottom half of the window. After selecting a part in the list view and clicking the delete button in the bottom-right next to the "Cancel"/exit button, a small new window pops up to confirm the deletion of the item. Clicking any option on the confirmation window results in its closure, but clicking "Yes" also deletes the item.
+Viewing the list is done on the "View" tab. Part type or "All" is selectable via a combo box at the top. Below that, there are text fields for the four generic part datums and search button. Clicking the search button causes the program to use any and all user selected or inputted data to be used to filter the part listing and display the list in the list view in the bottom half of the window. After selecting a part in the list view and clicking the delete button in the bottom-right next to the "Cancel"/exit button, a small new window pops up to confirm the deletion of the item. Clicking any option on the confirmation window results in its closure, but clicking "Yes" also deletes the item.
 
 ## Technologies
 Used to create the Part Registry:
@@ -37,7 +37,7 @@ Used to create the Part Registry:
 * SceneBuilder 11.0.1
 
 ## Possible Updates
-Here is a list of bug fixes, changes, or new additions that may come in the future:
+Here is a list of bug fixes, changes, or new additions that may come:
 
 *  Part Editing (IN-PROGRESS)
 * Add general invalid text label to view tab and enable it to give a message for clicking delete without an item selected
