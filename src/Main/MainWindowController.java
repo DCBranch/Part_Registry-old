@@ -56,7 +56,7 @@ import javafx.stage.StageStyle;
  * a delete confirmation window.
  *
  * @author Dawson C. Branch
- * @version 2.0.1
+ * @version 2.0.2
  * @since 1.2.0
  * 
  * Possible Updates: 
@@ -296,6 +296,8 @@ public class MainWindowController implements Initializable/*, WindowListener, Ac
     @FXML
     void confirmDelete(ActionEvent event) throws Exception {
         String selectedLine = ltv_View_Results.getSelectionModel().getSelectedItem();
+        if(selectedLine == null)
+            return;
         Stage delStage = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../DeleteConfirmation/DeleteConfirmationWindow.fxml"));
         Parent root = loader.load();
