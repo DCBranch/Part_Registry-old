@@ -52,3 +52,5 @@ Here is a list of bug fixes, changes, or new additions that may come:
 * Update toString() methods in parts
  * Possibly usable in part editing as a method of storing and converting data in a consistent manner
 * Have a setter for the delete window's focal part name and have it get inserted into its label
+* JDBC/RDBMS implementation
+* ElasticSearch implemention
